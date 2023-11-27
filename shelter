@@ -1,1 +1,55 @@
 Shelter[Rin]
+
+//安装git
+sudo apt install git
+
+//设置用户名和邮箱
+git config --global uesr.name "github用户名"
+git config --global uesr.email "github邮箱"
+
+//生成key
+ssh-keygen -t rsa -C "github邮箱"
+
+/*
+复制key：在对应目录下找到.ssh文件夹，复制其中id_rsa.pub内容
+为github账号配置SSH key：登录github，进入右侧Settings，点击左侧SSH and GPG keys，再点击New SSH key
+Title：标题名
+Key：刚刚复制的key
+设置完成后Add SSH key即可配置
+*/
+
+//是否链接成功
+ssh -T git@github.com
+
+//上传文件准备:
+//先创个文件夹（里面有要上传的东西），然后在该文件夹下进入终端（cmd中cd指令）
+
+//把这个目录变成Git可以管理的仓库
+git init
+
+//添加文件到仓库
+//git add . 是添加该文件夹下所有文件
+git add .
+
+//提交到仓库，双引号内是注释
+git commit -m "注释"
+
+/*
+创建仓库：github右上角+号点New repository
+Repository name*：仓库名称
+Description：备注
+然后点底下Create repository创建仓库
+这时候会显示一个页面，记录一下HTTPS SSH后面的地址
+格式为：https://github.com/用户名/仓库名称.git
+*/
+
+//关联仓库，：后面改成自己仓库地址
+git remote add origin git@github.com:用户名/仓库名称.git
+
+//创建分支
+git branch -M main
+
+//推送上去
+git push -u origin main
+
+//大功告成，可以去github上自己的仓库看看自己上传的文件了
