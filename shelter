@@ -12,6 +12,13 @@ ssh-keygen -t rsa -C "github邮箱"
 
 /*
 复制key：在对应目录下找到.ssh文件夹，复制其中id_rsa.pub内容
+可用copy指令复制
+
+//跳转到ssh文件夹下
+cd ~/.ssh
+//复制
+copy id_rsa.pub
+
 为github账号配置SSH key：登录github，进入右侧Settings，点击左侧SSH and GPG keys，再点击New SSH key
 Title：标题名
 Key：刚刚复制的key
