@@ -45,6 +45,8 @@ Description：备注
 
 //关联仓库，：后面改成自己仓库地址
 git remote add origin git@github.com:用户名/仓库名称.git
+也可以：
+git remote add origin https://github.com/用户名/仓库名称.git
 
 //创建分支
 git branch -M main
